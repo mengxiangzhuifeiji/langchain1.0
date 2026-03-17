@@ -1,12 +1,11 @@
-
 import os
+
 from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
 from langchain_core.prompts import (
     SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-    AIMessagePromptTemplate
+    HumanMessagePromptTemplate
 )
 
 # 加载环境变量
@@ -39,13 +38,13 @@ def example_1_why_templates():
     问题：字符串拼接容易出错、难维护、不可复用
     解决：使用提示词模板
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 1：为什么需要提示词模板？")
-    print("="*70)
+    print("=" * 70)
 
     # ❌ 不推荐：使用字符串拼接
     print("\n【方式 1：字符串拼接（不推荐）】")
-    print("-"*70)
+    print("-" * 70)
 
     topic = "Python"
     difficulty = "初学者"
@@ -59,7 +58,7 @@ def example_1_why_templates():
 
     # ✅ 推荐：使用 PromptTemplate
     print("【方式 2：使用 PromptTemplate（推荐）】")
-    print("-"*70)
+    print("-" * 70)
 
     # 创建可复用的模板
     template = PromptTemplate.from_template(
@@ -93,9 +92,9 @@ def example_2_prompt_template_basics():
     PromptTemplate 用于简单的文本模板
     适合单一提示词的场景
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 2：PromptTemplate 基础用法")
-    print("="*70)
+    print("=" * 70)
 
     # 方法 1：使用 from_template（最简单）
     print("\n【方法 1：from_template（推荐）】")
@@ -143,9 +142,9 @@ def example_3_chat_prompt_template():
     ChatPromptTemplate 用于构建聊天消息
     支持 system、user、assistant 多种角色
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 3：ChatPromptTemplate - 聊天消息模板")
-    print("="*70)
+    print("=" * 70)
 
     # 方法 1：使用元组格式（最简单，推荐）
     print("\n【方法 1：元组格式（推荐）】")
@@ -193,9 +192,9 @@ def example_4_conversation_template():
 
     包含系统提示、对话历史和当前问题
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 4：多轮对话模板")
-    print("="*70)
+    print("=" * 70)
 
     # 创建包含对话历史的模板
     template = ChatPromptTemplate.from_messages([
@@ -238,9 +237,9 @@ def example_5_message_templates():
 
     提供更细粒度的控制
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 5：MessagePromptTemplate 类（高级用法）")
-    print("="*70)
+    print("=" * 70)
 
     # 分别创建不同类型的消息模板
     system_template = SystemMessagePromptTemplate.from_template(
@@ -285,9 +284,9 @@ def example_6_partial_variables():
     - 某些变量固定不变
     - 需要创建模板变体
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("示例 6：部分变量（Partial Variables）")
-    print("="*70)
+    print("=" * 70)
 
     # 创建原始模板
     original_template = ChatPromptTemplate.from_messages([
