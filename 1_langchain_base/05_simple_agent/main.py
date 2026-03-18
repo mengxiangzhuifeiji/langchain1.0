@@ -192,15 +192,15 @@ def example_4_agent_execution_details():
 
     agent = create_agent(
         model=model,
-        tools=[calculator],
+        tools=[time_tool],
     system_prompt="你是一个有帮助的助手。"
     )
 
-    print("\n问题：25 乘以 8 等于多少？")
+    print("\n问题：现在什么时间？")
     print("\nAgent 执行过程：")
 
     response = agent.invoke({
-        "messages": [{"role": "user", "content": "25 乘以 8 等于多少？"}]
+        "messages": [{"role": "user", "content": "现在什么时间"}]
     })
 
     # 显示完整的消息历史
@@ -384,4 +384,4 @@ def main():
         traceback.print_exc()
 
 if __name__ == "__main__":
-    example_1_basic_agent()
+    example_4_agent_execution_details()
