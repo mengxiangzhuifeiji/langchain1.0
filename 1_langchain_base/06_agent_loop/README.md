@@ -351,7 +351,7 @@ except Exception as e:
 python main.py
 
 # 测试
-python test.py
+python look_this.py
 ```
 
 ## 核心要点总结
